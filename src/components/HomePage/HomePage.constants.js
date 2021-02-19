@@ -1,0 +1,5 @@
+const HOMEPAGE_CONSTANTS = {
+    HOMEPAGE: 'HOMEPAGE',
+  };
+  
+  export default HOMEPAGE_CONSTANTS;
