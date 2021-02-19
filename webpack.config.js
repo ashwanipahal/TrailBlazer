@@ -15,13 +15,18 @@ module.exports = {
         loader: 'babel-loader',
       },
       {
-        test: /\.scss$/,
+        test: /\.(gif|svg|jpg|png)$/,
+        loader: 'file-loader',
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
+  
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'public'),
-  },
+  }
 };
