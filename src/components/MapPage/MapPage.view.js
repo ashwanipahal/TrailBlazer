@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.scss';
@@ -15,6 +15,14 @@ let DefaultIcon = L.icon({
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
+const MyMarker = (props) => {
+  const marker = useRef();
+  useEffect(() => {
+    marker.current.openPopup();
+  });
+  return <Marker ref={marker} {...props} />;
+};
+
 const MapView = () => {
   const position = [0, 0];
   return (
@@ -28,9 +36,9 @@ const MapView = () => {
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='map_images/{z}/tile_{x}_{y}.png'
       />
-      <Marker position={position}>
+      <MyMarker position={position}>
         <Popup>G-06-201</Popup>
-      </Marker>
+      </MyMarker>
     </MapContainer>
   );
 };
