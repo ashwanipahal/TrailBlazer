@@ -1,9 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/HomePage/HomePage.view'
+import Home from './components/HomePage/HomePage.view';
+import { Provider } from 'react-redux';
+import { store } from './reduxStore';
 
 const App = () => {
-  return <Home />;
+  return (
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const TrailBlazerApp = App;
+
+ReactDOM.render(<TrailBlazerApp />, document.getElementById('root'));

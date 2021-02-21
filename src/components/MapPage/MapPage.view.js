@@ -23,10 +23,10 @@ const MyMarker = (props) => {
   return <Marker ref={marker} {...props} />;
 };
 
-const MapView = () => {
-  const position = [0, 0];
+const MapView = (props) => {
+  const { position } = props;
   return (
-    <MapContainer className='map-view' center={position} zoom={1} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
+    <MapContainer className='map-view' center={position} zoom={2} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
       <TileLayer
         bounds={[
           [-90, -180],
@@ -37,7 +37,7 @@ const MapView = () => {
         url='map_images/{z}/tile_{x}_{y}.png'
       />
       <MyMarker position={position}>
-        <Popup>G-06-201</Popup>
+        <Popup>Your searched Seat</Popup>
       </MyMarker>
     </MapContainer>
   );
