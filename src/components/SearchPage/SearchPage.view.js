@@ -7,9 +7,14 @@ const SearchPage = (props) => {
   const inputRef = useRef();
   let history = useHistory();
   const onSubmit = () => {
-    history.push('/map');
     const value = inputRef.current.value;
-    if (value) searchData([0, 0]); // TODO : set the exact lat long for the sheet
+    if (value) {
+      history.push('/map');
+      searchData([0, 0]);
+    } // TODO : set the exact lat long for the sheet
+    else {
+      alert('Enter seat number')
+    }
   };
 
   return (
