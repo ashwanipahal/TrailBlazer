@@ -11,9 +11,9 @@ const SearchPage = (props) => {
     if (value) {
       history.push('/map');
       searchData([0, 0]);
-    } // TODO : set the exact lat long for the sheet
+    } // TODO : set the exact lat long for the seat
     else {
-      alert('Enter seat number')
+      alert('Enter seat number');
     }
   };
 
@@ -23,7 +23,7 @@ const SearchPage = (props) => {
       <div className='input-field'>
         <input ref={inputRef} placeholder='G-06-201' />
         <button type='submit' onClick={onSubmit}>
-          Submit
+          Search
         </button>
       </div>
     </div>
