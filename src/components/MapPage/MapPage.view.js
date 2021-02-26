@@ -24,7 +24,8 @@ const MyMarker = (props) => {
 };
 
 const MapView = (props) => {
-  const { seatData: { position,seatNumber  } } = props;
+  let { seatData: { position, seatNumber  } } = props;
+  position = position && position.toJS() || [0,0];
   return (
     <MapContainer className='map-view' center={position} zoom={2} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
       <TileLayer

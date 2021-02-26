@@ -9,15 +9,15 @@ const SearchPage = (props) => {
   const onSubmit = () => {
     const value = inputRef.current.value;
     if (value) {
-      if (value.includes('transport')) {
+      if (/transport/i.test(value)) {
         history.push('/contacts');
         activeSearch('transport');
-      } else if (value.includes('it')) {
+      } else if (/it/i.test(value)) {
         history.push('/contacts');
         activeSearch('it');
       } else {
         history.push('/map');
-        searchData({ seatNumber: value, position: [0, 0] });
+        searchData(value);
       }
     } // TODO : set the exact lat long for the seat
     else {
@@ -31,7 +31,7 @@ const SearchPage = (props) => {
         <img src="images/teams.png" alt="teams" />
       </div>
       <div className='search-page__text'>
-      <div class="search-page__elements">
+      <div className="search-page__elements">
         <input ref={inputRef} placeholder='Are you looking for any location or contact number or food menu?' />
       </div>
         <button type='submit' onClick={onSubmit}>

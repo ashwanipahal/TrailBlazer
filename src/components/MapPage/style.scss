@@ -4,3 +4,16 @@
         margin-bottom: 54px;
     }
 }
+
+.leaflet-popup-content {
+    color: white;
+    font-weight: bold;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: white;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background-color: blueviolet;
+}
