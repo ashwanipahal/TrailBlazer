@@ -2,4 +2,5 @@ import { SEARCH_PAGE_ACTION_PATTERN } from '../../../constants/reducer.constants
 
 export default {
   SET_SEARCH_DATA: `${SEARCH_PAGE_ACTION_PATTERN}SET_SEARCH_DATA`,
+  SET_ACTIVE_SEARCH: `${SEARCH_PAGE_ACTION_PATTERN}SET_ACTIVE_SEARCH`
 };
