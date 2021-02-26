@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { setSearchData } from './SearchPage.actions';
+import { setSearchData,setActiveSearch } from './SearchPage.actions';
 import SearchPageView from '../SearchPage.view';
 
 const mapDispatchToProps = dispatch => {
@@ -8,6 +8,9 @@ const mapDispatchToProps = dispatch => {
     searchData: (payload) => {
       dispatch(setSearchData(payload));
     },
+    activeSearch: (payload) => {
+      dispatch(setActiveSearch(payload));
+    }
   };
 };
 

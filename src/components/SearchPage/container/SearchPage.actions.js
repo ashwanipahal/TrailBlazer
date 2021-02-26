@@ -6,3 +6,10 @@ export const setSearchData = (payload) => {
       payload
     };
   };
+
+export const setActiveSearch = (payload) => {
+    return {
+      type: SEARCH_PAGE_CONSTANTS.SET_ACTIVE_SEARCH,
+      payload
+    };
+  };

@@ -3,14 +3,22 @@ import { useHistory } from 'react-router-dom';
 import './style.scss';
 
 const SearchPage = (props) => {
-  const { searchData } = props;
+  const { searchData, activeSearch } = props;
   const inputRef = useRef();
   let history = useHistory();
   const onSubmit = () => {
     const value = inputRef.current.value;
     if (value) {
-      history.push('/map');
-      searchData({seatNumber:value,position:[0,0]});
+      if (value.includes('transport')) {
+        history.push('/contacts');
+        activeSearch('transport');
+      } else if (value.includes('it')) {
+        history.push('/contacts');
+        activeSearch('it');
+      } else {
+        history.push('/map');
+        searchData({ seatNumber: value, position: [0, 0] });
+      }
     } // TODO : set the exact lat long for the seat
     else {
       alert('Enter seat number');
