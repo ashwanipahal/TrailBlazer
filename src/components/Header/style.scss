@@ -1,0 +1,12 @@
+.header {
+        width: 100%;
+        position: relative;
+        height: 80px;
+        border-bottom: solid 1px #e5e5e5;
+        box-shadow: 0 4px 6px -6px #e5e5e5;
+        background-color:#ffffff;
+    &__elements {
+        width: 1440px;
+        margin:0 auto;
+    }
+}

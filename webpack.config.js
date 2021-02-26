@@ -21,6 +21,7 @@ module.exports = {
         options: {
           alias: {
             'map_images': path.resolve(__dirname, 'public/map_images'),
+            'images': path.resolve(__dirname, 'public/images'),
           },
         }
       },
