@@ -1,0 +1,10 @@
+.food-menu {
+    max-width: 1440px;
+    margin:24px auto;
+    padding:48px;
+    display:flex;
+    background-color: #ffffff;
+&__elements {
+        margin:0 auto;
+    }
+}

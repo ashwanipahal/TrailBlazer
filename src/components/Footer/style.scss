@@ -1,0 +1,16 @@
+.footer {
+    width: 100%;
+    position: relative;
+    height: 160px;
+    background-color:#023f88;
+&__elements {
+        width: 1440px;
+        margin:0 auto;
+        padding:48px 0;
+    }
+p {
+        color:#ffffff;
+        text-align: center;
+        padding:0 0 48px 0;
+    }
+}
