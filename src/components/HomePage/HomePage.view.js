@@ -22,7 +22,9 @@ const Home = ()=> {
               <MapContainer />
             </Route>
             <Route path="/food-menu">
+              <HeaderComponent />
               <FoodMenuPage />
+              <FooterComponent />
             </Route>
             <Route path="/">
               <HeaderComponent />

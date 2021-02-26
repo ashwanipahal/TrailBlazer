@@ -1,5 +1,12 @@
 .food-menu-link {
-  margin-top: 30px;
+  margin:24px auto;
   justify-content: center;
   display: flex;
+  max-width: 1440px;
+  padding: 48px;
+  background-color: #ffffff;
+  img {
+    display: block;
+    cursor: pointer;
+  }
 }
