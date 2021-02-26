@@ -10,10 +10,10 @@ const SearchPage = (props) => {
     const value = inputRef.current.value;
     if (value) {
       history.push('/map');
-      searchData([0, 0]);
-    } // TODO : set the exact lat long for the sheet
+      searchData({seatNumber:value,position:[0,0]});
+    } // TODO : set the exact lat long for the seat
     else {
-      alert('Enter seat number')
+      alert('Enter seat number');
     }
   };
 

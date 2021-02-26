@@ -24,7 +24,7 @@ const MyMarker = (props) => {
 };
 
 const MapView = (props) => {
-  const { position } = props;
+  const { seatData: { position,seatNumber  } } = props;
   return (
     <MapContainer className='map-view' center={position} zoom={2} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
       <TileLayer
@@ -37,7 +37,7 @@ const MapView = (props) => {
         url='map_images/{z}/tile_{x}_{y}.png'
       />
       <MyMarker position={position}>
-        <Popup>Your searched Seat</Popup>
+        <Popup>{seatNumber}</Popup>
       </MyMarker>
     </MapContainer>
   );
