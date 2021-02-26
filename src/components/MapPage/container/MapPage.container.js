@@ -5,7 +5,7 @@ import MapPageView from '../MapPage.view';
 
 const mapStateToProps = state => {
   return {
-    position: searchData(state),
+    seatData: searchData(state)
   };
 };
 
