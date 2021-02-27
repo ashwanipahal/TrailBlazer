@@ -26,7 +26,7 @@ const SearchPage = (props) => {
   };
 
   return (
-    <div className='search-page'>
+    <div className='search-page col-lg-12'>
       <div className='search-page__image'>
         <img src="images/teams.png" alt="teams" />
       </div>
