@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "TrailBlazer App",
   "main": "index.js",
+  "homepage": "http://localhost:8080/trailblazer",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-build": "webpack --config webpack.dev.js",
