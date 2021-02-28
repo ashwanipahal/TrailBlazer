@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.scss';
 
 const ContactPageView = (props) => {
   const { contactTransportData, contactITData, activeSearch } = props;
@@ -10,14 +11,21 @@ const ContactPageView = (props) => {
   }
   return (
     <div>
+        <div className='contact-page'>
+            <div class='row'>
+              <div className='contact-page__image col-lg-6 col-md-6 col-sm-12'><img src="images/contactus.jpg" alt="contact information" /></div>
+              <div className='contact-page__info col-lg-6 col-md-6 col-sm-12'>
+              <ul>
       {Object.keys(searchedObject).map((key) => {
         return (
-          <div>
-            {key} - {searchedObject[key]}
-          </div>
+            <li><span className='key'>{key}</span> -<span>{searchedObject[key]}</span></li>
         );
       })}
+      </ul>
+      </div>
     </div>
+    </div>
+  </div>
   );
 };
 

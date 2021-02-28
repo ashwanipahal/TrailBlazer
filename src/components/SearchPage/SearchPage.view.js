@@ -9,15 +9,15 @@ const SearchPage = (props) => {
   const onSubmit = () => {
     const value = inputRef.current.value;
     if (value) {
-      if (value.includes('transport')) {
+      if (/transport/i.test(value)) {
         history.push('/contacts');
         activeSearch('transport');
-      } else if (value.includes('it')) {
+      } else if (/it/i.test(value)) {
         history.push('/contacts');
         activeSearch('it');
       } else {
         history.push('/map');
-        searchData({ seatNumber: value, position: [0, 0] });
+        searchData(value);
       }
     } // TODO : set the exact lat long for the seat
     else {
@@ -26,23 +26,28 @@ const SearchPage = (props) => {
   };
 
   return (
-    <div className='search-page col-lg-12'>
-      <div className='search-page__image'>
+    <div className='row no-gutters'>
+    <div className='search-page'>
+    <div class='row'>
+      <div className='search-page__image col-lg-6 col-md-6 col-sm-12'>
         <img src="images/teams.png" alt="teams" />
       </div>
-      <div className='search-page__text'>
-      <div class="search-page__elements">
-        <input ref={inputRef} placeholder='Are you looking for any location or contact number or food menu?' />
+      <div className='search-page__text col-lg-6 col-md-6 col-sm-12'>
+      <div class="row">
+        <div className="search-page__elements col-lg-8 col-md-12">
+        <input ref={inputRef} placeholder='Are you looking for any location or contact number?' />
       </div>
-        <button type='submit' onClick={onSubmit}>
+        <button type='submit' onClick={onSubmit} className="col-lg-3 col-md-12">
           Search
         </button>
-
+      </div>
         <ul>
             <li>Looking for a seat or conference room? Just, input your seat number or conference room name and we will show you your destination.</li>
             <li>Looking for OS/IT helpline number to solve your problems. Type in the name or search from the list.</li>
         </ul>
       </div>
+    </div>
+    </div>
     </div>
   );
 };
