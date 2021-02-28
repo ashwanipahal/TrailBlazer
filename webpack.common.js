@@ -2,12 +2,10 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
-  output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
+  entry: {
+    main: './src/app.js'
   },
-  
+
   module: {
     rules: [
       {
@@ -20,10 +18,10 @@ module.exports = {
         loader: 'file-loader',
         options: {
           alias: {
-            'map_images': path.resolve(__dirname, 'public/map_images'),
-            'images': path.resolve(__dirname, 'public/images'),
+            map_images: path.resolve(__dirname, 'public/map_images'),
+            images: path.resolve(__dirname, 'public/images'),
           },
-        }
+        },
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -31,9 +29,4 @@ module.exports = {
       },
     ],
   },
-  
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-  }
 };
