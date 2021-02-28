@@ -10,14 +10,14 @@ const initialState = fromJS({
     "Aravalli":[24.03893911689407,48.214874267578125],
     "G-10-202":[22.646967311123674,-28.44497680664063],
   },
-  transport: {
-    "Cab Transport":123456789,
-    "Private cab":123456789,
-  },
-  it: {
-    "Software support":1234567890,
-    "Hardware support":12334456
-  },
+  // transport: {
+  //   "Cab Transport":123456789,
+  //   "Private cab":123456789,
+  // },
+  // it: {
+  //   "Software support":1234567890,
+  //   "Hardware support":12334456
+  // },
 });
 
 const SearchPageReducer = (state = initialState, action) => {

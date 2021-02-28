@@ -1,18 +1,25 @@
 import { connect } from 'react-redux';
 
-import { contactTransportData, contactITData,activeSearch } from '../../SearchPage/container/SearchPage.selectors';
+import { contactData } from '../../ContactPage/container/ContactPage.selectors';
+import { getContactDataAction } from '../../ContactPage/container/ContactPage.actions';
 import ContactPage from '../ContactPage.view';
 
 const mapStateToProps = state => {
   return {
-    contactTransportData: contactTransportData(state),
-    contactITData: contactITData(state),
-    activeSearch: activeSearch(state),
+    contactDetail: contactData(state),
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getContactDetails: () => {
+      dispatch(getContactDataAction());
+    }
   };
 };
 
 
-
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(ContactPage);
