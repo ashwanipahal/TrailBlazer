@@ -3,6 +3,6 @@ export function fetchMenu() {
   .then((response) => {
     return response.text();
   }).catch(e=>{
-    console.log("error>>>",e);
+    console.log("error logged",e);
   });
 }
