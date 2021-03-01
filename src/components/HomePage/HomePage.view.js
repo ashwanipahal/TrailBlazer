@@ -4,7 +4,7 @@ import MapContainer from '../MapPage/index';
 import FoodMenuLink from '../FoodMenuLink/FoodMenuLink';
 import FoodMenuPage from '../FoodMenuPage';
 import ContactPage from '../ContactPage';
-import Search from '../SearchPage/container/SearchPage.container';
+import Search from '../SearchPage';
 import HeaderComponent from '../Header/HeaderView';
 import FooterComponent from '../Footer/FooterView';
 import './style.scss';

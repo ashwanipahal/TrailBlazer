@@ -20,7 +20,7 @@ const MyMarker = (props) => {
   const marker = useRef();
   useEffect(() => {
     marker.current.openPopup();
-  });
+  },[]);
   return <Marker ref={marker} {...props} />;
 };
 
@@ -29,14 +29,13 @@ function useQuery() {
 }
 
 const MapView = (props) => {
-  let { seatData: { position = [0, 0], seatNumber = '' } = {}, getMapData } = props;
+  let { mapData, getMapData } = props;
   let query = useQuery();
   let seat = query.get('location');
-  console.log("seat",seat);
   useEffect(() => {
     getMapData(seat);
-  });
-  // position = (position && position.toJS()) || [0, 0];
+  },[]);
+  const position = mapData[seat] || [0,0];
   return (
     <MapContainer className='map-view' center={position} zoom={2} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
       <TileLayer
@@ -49,7 +48,7 @@ const MapView = (props) => {
         url='map_images/{z}/tile_{x}_{y}.png'
       />
       <MyMarker position={position}>
-        <Popup>{seatNumber}</Popup>
+        <Popup>{seat}</Popup>
       </MyMarker>
     </MapContainer>
   );

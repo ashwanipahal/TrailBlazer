@@ -1,17 +1,17 @@
-import CONTACT_PAGE_CONSTANTS from './MapPage.constants';
+import MAP_PAGE_CONSTANTS from './MapPage.constants';
 import { fromJS } from 'immutable';
 
 const initialState = fromJS({
-  contactDetails:{},
+  mapData:{},
 });
 
-const ContactPageReducer = (state = initialState, action) => {
+const MapPageReducer = (state = initialState, action) => {
   switch (action.type) {
-    case CONTACT_PAGE_CONSTANTS.SET_CONTACT:
-      return state.set('contactDetails', action.payload);
+    case MAP_PAGE_CONSTANTS.SET_MAP_DATA:
+      return state.set('mapData', action.payload);
     default:
       return state;
   }
 };
 
-export default ContactPageReducer;
+export default MapPageReducer;

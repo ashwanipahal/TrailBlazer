@@ -6,7 +6,7 @@ import MapPageView from '../MapPage.view';
 
 const mapStateToProps = state => {
   return {
-    seatData: mapData(state)
+    mapData: mapData(state)
   };
 };
 

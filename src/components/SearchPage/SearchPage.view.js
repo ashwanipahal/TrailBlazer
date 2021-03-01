@@ -2,8 +2,7 @@ import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import './style.scss';
 
-const SearchPage = (props) => {
-  const { searchData } = props;
+const SearchPage = () => {
   const inputRef = useRef();
   let history = useHistory();
   const onSubmit = () => {
@@ -22,7 +21,6 @@ const SearchPage = (props) => {
         
       } else {
         history.push({pathname: '/map',search: `?location=${value}`});
-        searchData(value);
       }
     } // TODO : set the exact lat long for the seat
     else {
