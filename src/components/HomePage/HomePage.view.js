@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <HeaderComponent />
-      <Router>
+      <Router basename="/trailblazer">
         <Switch>
           <Route path='/contacts'>
             <ContactPage />
