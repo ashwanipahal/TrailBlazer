@@ -2,7 +2,6 @@ import SEARCH_PAGE_CONSTANTS from '../container/SearchPage.constants';
 import { fromJS } from 'immutable';
 
 const initialState = fromJS({
-  activeSearch:"",
   searchedSeat:{},
   mapData: {
     "Himalayan":[20.120418614613282,-72.04696655273439],
@@ -17,8 +16,6 @@ const SearchPageReducer = (state = initialState, action) => {
     case SEARCH_PAGE_CONSTANTS.SET_SEARCH_DATA:
       const position = state.getIn(["mapData",action.payload]);
       return state.set('searchedSeat', { seatNumber: action.payload,position:position});
-    case SEARCH_PAGE_CONSTANTS.SET_ACTIVE_SEARCH:
-      return state.set('activeSearch', action.payload);
     default:
       return state;
   }

@@ -1,11 +1,19 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './style.scss';
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const ContactPageView = (props) => {
-  const { getContactDetails, contactDetail,activeSearch } = props;
+  const { getContactDetails, contactDetail } = props;
+
+  let query = useQuery();
+  let data = query.get('query');
   useEffect(() => {
-    getContactDetails();
-  }, []);
+    getContactDetails(data);
+  });
   return (
     <div>
       <div className='contact-page'>
@@ -16,7 +24,7 @@ const ContactPageView = (props) => {
           <div className='contact-page__info col-lg-6 col-md-6 col-sm-12'>
             <ul className='contact-page__list'>
               <li>
-                <span className='key'>{activeSearch}: {contactDetail}</span>
+                <span className='key'>{data}: {contactDetail}</span>
               </li>
             </ul>
           </div>

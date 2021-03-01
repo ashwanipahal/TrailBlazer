@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.scss';
@@ -23,9 +24,19 @@ const MyMarker = (props) => {
   return <Marker ref={marker} {...props} />;
 };
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
+
 const MapView = (props) => {
-  let { seatData: { position, seatNumber  } } = props;
-  position = position && position.toJS() || [0,0];
+  let { seatData: { position = [0, 0], seatNumber = '' } = {}, getMapData } = props;
+  let query = useQuery();
+  let seat = query.get('location');
+  console.log("seat",seat);
+  useEffect(() => {
+    getMapData(seat);
+  });
+  // position = (position && position.toJS()) || [0, 0];
   return (
     <MapContainer className='map-view' center={position} zoom={2} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
       <TileLayer
