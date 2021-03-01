@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import './style.scss';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, CircleMarker,Tooltip } from 'react-leaflet';
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
@@ -20,7 +20,7 @@ const MyMarker = (props) => {
   const marker = useRef();
   useEffect(() => {
     marker.current.openPopup();
-  },[]);
+  }, []);
   return <Marker ref={marker} {...props} />;
 };
 
@@ -34,8 +34,9 @@ const MapView = (props) => {
   let seat = query.get('location');
   useEffect(() => {
     getMapData(seat);
-  },[]);
-  const position = mapData.length && mapData[seat] || [0,0];
+  }, []);
+  const position = (mapData.length && mapData[seat]) || [0, 0];
+  const entryGate = [17.84675419546212, 150.22430419921878];
   return (
     <MapContainer className='map-view' center={position} zoom={2} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
       <TileLayer
@@ -50,6 +51,9 @@ const MapView = (props) => {
       <MyMarker position={position}>
         <Popup>{seat}</Popup>
       </MyMarker>
+      <CircleMarker center={entryGate} pathOptions={{ color: 'red' }} radius={20}>
+        <Tooltip direction="top" permanent>Entry Gate</Tooltip>
+      </CircleMarker>
     </MapContainer>
   );
 };
