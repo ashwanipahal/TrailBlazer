@@ -1,11 +1,19 @@
-import React, { useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
+import { createBrowserHistory } from 'history';
 import './style.scss';
 
-const HeaderComponent = (props) => {
-return (
-    <div className="header">
-           <div className="header__elements"><img src="images/logo.png" alt="logo" /></div>
+const HeaderComponent = () => {
+  let history = createBrowserHistory();
+  const backToHomePage = () => {
+    if(window.location.pathname !== '/'){
+      history.goBack();
+    }
+  }
+  return (
+    <div className='header'>
+      <div className='header__elements'>
+        <img onClick={backToHomePage} src='images/logo.png' alt='logo' />
+      </div>
     </div>
   );
 };

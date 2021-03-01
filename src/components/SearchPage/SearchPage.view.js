@@ -31,12 +31,12 @@ const SearchPage = () => {
   return (
     <div className='row no-gutters'>
       <div className='search-page'>
-        <div class='row'>
+        <div className='row'>
           <div className='search-page__image col-lg-6 col-md-6 col-sm-12'>
             <img src='images/teams.png' alt='teams' />
           </div>
           <div className='search-page__text col-lg-6 col-md-6 col-sm-12'>
-            <div class='row'>
+            <div className='row'>
               <div className='search-page__elements col-lg-8 col-md-12'>
                 <input
                   className='input-field'

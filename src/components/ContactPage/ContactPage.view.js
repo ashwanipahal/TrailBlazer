@@ -17,7 +17,7 @@ const ContactPageView = (props) => {
   return (
     <div>
       <div className='contact-page'>
-        <div class='row'>
+        <div className='row'>
           <div className='contact-page__image col-lg-6 col-md-6 col-sm-12'>
             <img src='images/contactus.jpg' alt='contact information' />
           </div>
