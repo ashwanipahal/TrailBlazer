@@ -24,7 +24,7 @@ const ContactPageView = (props) => {
           <div className='contact-page__info col-lg-6 col-md-6 col-sm-12'>
             <ul className='contact-page__list'>
               <li>
-                <span className='key'>{data}: {contactDetail}</span>
+                <span className='key'>{data.charAt(0).toUpperCase() + data.slice(1)}: {contactDetail}</span>
               </li>
             </ul>
           </div>
