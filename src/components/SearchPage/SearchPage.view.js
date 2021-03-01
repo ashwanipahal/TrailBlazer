@@ -40,7 +40,7 @@ const SearchPage = (props) => {
       <div className='search-page__text col-lg-6 col-md-6 col-sm-12'>
       <div class="row">
         <div className="search-page__elements col-lg-8 col-md-12">
-        <input ref={inputRef} placeholder='Are you looking for any location or contact number?' />
+        <input className="input-field" ref={inputRef} placeholder='Are you looking for any location or contact number?' />
       </div>
         <button type='submit' onClick={onSubmit} className="col-lg-3 col-md-12">
           Search
