@@ -8,7 +8,7 @@ const FoodMenuView = (props) => {
   },[])
 
   return (
-    <div className='food-menu-wrapper'><img src={foodMenu} /> </div>   
+    <div className='food-menu-wrapper'><h3>Here is the food menu available in Ground floor cafeteria by Royal Grillz.</h3><img src={foodMenu} /> </div>   
   );
 };  
 
