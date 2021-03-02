@@ -1,5 +1,0 @@
-const HOMEPAGE_CONSTANTS = {
-    HOME_PAGE_LOAD_DATA: 'HOME_PAGE_LOAD_DATA',
-  };
-  
-  export default HOMEPAGE_CONSTANTS;
