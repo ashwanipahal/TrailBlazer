@@ -35,7 +35,7 @@ const MapView = (props) => {
   useEffect(() => {
     getMapData(seat);
   }, []);
-  const position = (mapData.length && mapData[seat]) || [0, 0];
+  const position = (mapData && mapData[seat]) || [0, 0];
   const entryGate = [17.84675419546212, 150.22430419921878];
   return (
     <MapContainer className='map-view' center={position} zoom={2} minZoom={1} maxZoom={3} scrollWheelZoom={false}>
